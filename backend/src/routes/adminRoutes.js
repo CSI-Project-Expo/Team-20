@@ -1,17 +1,8 @@
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const { authMiddleware, adminMiddleware } = require('../middleware/authMiddleware');
-const {
-    createRole,
-    updateRole,
-    deleteRole,
-    getAllSkills,
-    createSkill,
-    addSkillToRole,
-    createRoadmapStep,
-    deleteRoadmapStep
-} = require('../controllers/adminController');
+import { authMiddleware, adminMiddleware } from '../middleware/authMiddleware.js';
+import { createRole, updateRole, deleteRole, createSkill, addSkillToRole, getAllSkills, createRoadmapStep, deleteRoadmapStep } from '../controllers/adminController.js';
 
 // All routes here are protected
 router.use(authMiddleware);
@@ -31,4 +22,4 @@ router.post('/roles/:id/skills', addSkillToRole);
 router.post('/roadmap', createRoadmapStep);
 router.delete('/roadmap/:id', deleteRoadmapStep);
 
-module.exports = router;
+export default router;

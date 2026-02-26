@@ -1,13 +1,7 @@
 
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const {
-    getRoles,
-    getRoleById,
-    getRoleSkills,
-    getRoleRoadmap,
-    getRoleProjects,
-} = require('../controllers/roleController');
+import { getRoles, getRoleById, getRoleSkills, getRoleRoadmap, getRoleProjects } from '../controllers/roleController.js';
 
 router.get('/', getRoles);
 router.get('/:id', getRoleById);
@@ -15,4 +9,4 @@ router.get('/:id/skills', getRoleSkills);
 router.get('/:id/roadmap', getRoleRoadmap);
 router.get('/:id/projects', getRoleProjects);
 
-module.exports = router;
+export default router;

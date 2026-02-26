@@ -1,7 +1,7 @@
 
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -12,9 +12,9 @@ app.use(cors());
 app.use(express.json());
 
 // Import Routes
-const authRoutes = require('./routes/authRoutes');
-const roleRoutes = require('./routes/roleRoutes');
-const adminRoutes = require('./routes/adminRoutes');
+import authRoutes from './routes/authRoutes.js';
+import roleRoutes from './routes/roleRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 
 // Use Routes
 app.use('/api/admin', authRoutes); // Login

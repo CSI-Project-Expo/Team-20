@@ -1,11 +1,9 @@
 
-const { PrismaClient } = require('@prisma/client');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+import { prisma } from "../../prisma/db.js";
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
-const prisma = new PrismaClient();
-
-const login = async (req, res) => {
+export const login = async (req, res) => {
     const { email, password } = req.body;
 
     try {
@@ -32,5 +30,3 @@ const login = async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 };
-
-module.exports = { login };

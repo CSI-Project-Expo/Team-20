@@ -1,6 +1,4 @@
-
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+import { prisma } from "../../prisma/db.js";
 
 const getRoles = async (req, res) => {
     try {
@@ -63,7 +61,7 @@ const getRoleProjects = async (req, res) => {
     }
 };
 
-module.exports = {
+export {
     getRoles,
     getRoleById,
     getRoleSkills,

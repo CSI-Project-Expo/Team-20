@@ -1,6 +1,5 @@
 
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+import { prisma } from "../../prisma/db.js";
 
 // --- Roles ---
 const createRole = async (req, res) => {
@@ -91,7 +90,7 @@ const deleteRoadmapStep = async (req, res) => {
     }
 }
 
-module.exports = {
+export {
     createRole,
     updateRole,
     deleteRole,
