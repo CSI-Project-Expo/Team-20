@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
-import RoleDashboard from './pages/RoleDashboardPage';
+import RoleDetails from './pages/RoleDetails';
 import RoadmapPage from './pages/RoadmapPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboard from './pages/AdminDashboardPage';
@@ -23,7 +23,7 @@ function App() {
                 <div className="flex-grow">
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
-                        <Route path="/role/:id" element={<RoleDashboard />} />
+                        <Route path="/role/:id" element={<RoleDetails />} />
                         <Route path="/role/:id/roadmap" element={<RoadmapPage />} />
                         <Route path="/admin/login" element={<AdminLoginPage />} />
                         <Route path="/admin/dashboard" element={
